@@ -1,5 +1,6 @@
 {
-  "language": "russian_fan",
+  "language": "russian_fan_ognb",
+  "version": "ognb",
   "friendly_name": "Russian (Fan)",
   "native_name": "Русский (Фан)",
   "country_code": "RU",

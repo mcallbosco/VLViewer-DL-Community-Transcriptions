@@ -1,9 +1,11 @@
 {
   "language": "example_language",
+  "version": "content-version-id",
   "friendly_name": "Example Language",
   "native_name": "Example Language",
   "country_code": "US",
   "flag_emoji": "🏳️",
+  "base_language": "english",
   "tooltip_text": "Short description shown on hover.",
   "credits": [
     {

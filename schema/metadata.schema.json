@@ -5,10 +5,12 @@
   "type": "object",
   "required": [
     "language",
+    "version",
     "friendly_name",
     "native_name",
     "country_code",
     "flag_emoji",
+    "base_language",
     "tooltip_text",
     "credits"
   ],
@@ -18,6 +20,11 @@
       "type": "string",
       "pattern": "^[a-z][a-z0-9_]*$",
       "description": "Language identifier: lowercase letters, digits, and underscores only. Must match the folder name."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "Stable VLViewer content-version ID this localization was authored against."
     },
     "friendly_name": {
       "type": "string",
@@ -38,6 +45,11 @@
       "type": "string",
       "minLength": 1,
       "description": "Flag emoji for the language."
+    },
+    "base_language": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Official language used for untranslated voice lines and localized game metadata."
     },
     "tooltip_text": {
       "type": "string",

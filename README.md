@@ -8,12 +8,12 @@ Each localization lives in its own folder under `localizations/`:
 
 ```
 localizations/
-  <language>/
+  <language>_<version>/
     <original_vdf_filename>.vdf    # VDF file, using the game's original filename with a .vdf extension
     metadata.json                  # Metadata describing the localization
 ```
 
-- `<language>` must be **lowercase**, use **underscores** instead of spaces, and contain only `a-z`, `0-9`, and `_`. The folder name must match the `language` field inside `metadata.json`.
+- `<language>_<version>` must be **lowercase**, use **underscores** instead of spaces, and contain only `a-z`, `0-9`, and `_`. The folder name must match the `language` field inside `metadata.json`; the `version` field keeps the exact VLViewer content-version ID (which may use hyphens).
 - Keep the **original base filename as shipped with the game** (for example, `citadel_generated_vo_russian`) and use a `.vdf` extension.
 
 A starter template is available at [`localizations/_template/`](localizations/_template/). Folders whose name starts with `_` are ignored by validation.
@@ -24,11 +24,13 @@ All fields are required.
 
 ```json
 {
-  "language": "russian_fan",
+  "language": "russian_fan_ognb",
+  "version": "ognb",
   "friendly_name": "Russian (Fan)",
   "native_name": "Русский (Фан)",
   "country_code": "RU",
   "flag_emoji": "🇷🇺",
+  "base_language": "russian",
   "tooltip_text": "Fan translation by Торфусняк",
   "credits": [
     {
@@ -52,10 +54,12 @@ All fields are required.
 | Field | Type | Description |
 |---|---|---|
 | `language` | string | Identifier. Lowercase letters, digits, and underscores only. Must match the folder name. |
+| `version` | string | Stable VLViewer content-version ID this translation targets (for example, `"ognb"`). |
 | `friendly_name` | string | English-facing display name (e.g. `"Russian (Fan)"`). |
 | `native_name` | string | Display name written in the native script (e.g. `"Русский (Фан)"`). |
 | `country_code` | string | ISO 3166-1 alpha-2 country code, uppercase (e.g. `"RU"`). |
 | `flag_emoji` | string | Flag emoji for the language (e.g. `"🇷🇺"`). |
+| `base_language` | string | Official language used for untranslated lines and localized game metadata (e.g. `"russian"`). |
 | `tooltip_text` | string | Short tooltip shown in the UI. |
 | `credits` | array | At least one credit entry. See below. |
 
@@ -71,6 +75,6 @@ The JSON Schema for `metadata.json` lives at [`schema/metadata.schema.json`](sch
 ## Contributing a localization
 Please contact me `@mcall` on Discord before tyring to contribute a new language.
 1. Fork this repo.
-2. Create `localizations/<language>/`.
+2. Create `localizations/<language>_<version>/` so translations for different game versions have distinct IDs.
 3. Add the original VDF file from the game and a `metadata.json` that matches the format above.
 4. Open a pull request. CI will validate the folder layout, `metadata.json` contents, and that the VDF file is present.
