@@ -1,0 +1,32 @@
+{
+  "language": "french_fan_dub_cns_harrow",
+  "version": "cns-harrow",
+  "friendly_name": "Deadlock French Fan Dub",
+  "native_name": "Deadlock — Doublage français (fan)",
+  "country_code": "FR",
+  "flag_emoji": "🇫🇷",
+  "base_language": "french",
+  "tooltip_text": "French captions supplied by the Deadlock French Fan Dub team.",
+  "credits": [
+    {
+      "name": "Seven — Treamz",
+      "link": "https://gamebanana.com/members/6017397"
+    },
+    {
+      "name": "Doorman — Miss Moutonne",
+      "link": null
+    },
+    {
+      "name": "Bebop — Liko",
+      "link": null
+    },
+    {
+      "name": "Sinclair — neko_arsfox",
+      "link": null
+    },
+    {
+      "name": "Billy — Gamin",
+      "link": null
+    }
+  ]
+}
